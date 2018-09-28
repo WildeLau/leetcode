@@ -63,13 +63,16 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-       
-        origin_len = len(nums)
+        
         new_len = 0
-        for i in range(origin_len):
-            nums[new_len] = nums[i]
-            if (new_len == 0) | (nums[new_len-1] != nums[i]):
-                new_len += 1
+        
+        if nums:
+            new_len = 1
+            for i in nums:
+                if i > nums[new_len-1]:
+                    nums[new_len] = i
+                    new_len += 1         
 
         return new_len
+
 
