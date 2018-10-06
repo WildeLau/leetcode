@@ -42,7 +42,7 @@ class Solution {
         int end = nums.length - 1;
         int pivotIndex = -1;
         while (pivotIndex != (k - 1)) {
-            pivotIndex = portion(nums, start, end);
+            pivotIndex = partition(nums, start, end);
             if (pivotIndex < (k - 1)) 
                 start = pivotIndex + 1;
             if (pivotIndex > (k - 1))
@@ -52,7 +52,7 @@ class Solution {
         return nums[k-1];        
     }
 
-    private int portion(int[] nums, int start, int end) {
+    private int partition(int[] nums, int start, int end) {
         int pivot = nums[end];
         int pivotIndex = start - 1;
         for (int j = start; j < end; j++) {

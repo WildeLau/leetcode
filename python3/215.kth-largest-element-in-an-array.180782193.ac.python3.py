@@ -41,7 +41,7 @@ class Solution:
         end = len(nums) - 1
         pivot_index = -1
         while pivot_index != (k - 1):
-            pivot_index = self.portion(nums, start, end)
+            pivot_index = self.partition(nums, start, end)
             if pivot_index > (k - 1):
                 end = pivot_index - 1
             if pivot_index < (k - 1):
@@ -49,7 +49,7 @@ class Solution:
 
         return nums[k - 1]
 
-    def portion(self, nums, start, end):
+    def partition(self, nums, start, end):
 
         pivot = nums[end]
         pivot_index = start
