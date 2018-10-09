@@ -40,10 +40,10 @@ class Solution:
         front, tail = 0, len(s) - 1
         result = True
         s = s.lower()
-        while(front < tail):
-            while((not s[front].isalnum()) and (front < tail)):
+        while front < tail:
+            while (not s[front].isalnum()) and (front < tail):
                 front += 1
-            while((not s[tail].isalnum()) and (front < tail)):
+            while (not s[tail].isalnum()) and (front < tail):
                 tail -= 1
             if s[front] != s[tail]:
                 result  = False
